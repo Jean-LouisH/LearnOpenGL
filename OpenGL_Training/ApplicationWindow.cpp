@@ -4,7 +4,7 @@
 
 ApplicationWindow::ApplicationWindow(std::string appName)
 {
-	std::string displayedAppName = "OpenGL Training Lesson: " + appName;
+	std::string displayedAppName = "OpenGL Training Exercise: " + appName;
 	this->windowWidth = 800;
 	this->windowHeight = 600;
 
