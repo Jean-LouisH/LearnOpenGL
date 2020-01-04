@@ -29,7 +29,7 @@
     <ClInclude Include="Timing.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Lessons\Lessons.hpp">
+    <ClInclude Include="Exercises\Exercises.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

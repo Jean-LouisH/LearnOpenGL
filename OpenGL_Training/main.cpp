@@ -1,4 +1,4 @@
-#include "Lessons/Lessons.hpp"
+#include "Exercises/Exercises.hpp"
 
 int main(int argc, char* argv[])
 {
