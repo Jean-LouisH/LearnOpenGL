@@ -140,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ApplicationWindow.hpp" />
+    <ClInclude Include="Lessons\Lessons.hpp" />
     <ClInclude Include="Timing.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

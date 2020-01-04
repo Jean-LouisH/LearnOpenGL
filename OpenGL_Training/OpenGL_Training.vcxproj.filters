@@ -29,5 +29,8 @@
     <ClInclude Include="Timing.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Lessons\Lessons.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
