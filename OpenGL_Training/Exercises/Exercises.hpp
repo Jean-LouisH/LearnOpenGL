@@ -9,5 +9,6 @@ namespace OpenGL_Training
 	namespace Exercises
 	{
 		void blank();
+		void triangle();
 	}
 }
