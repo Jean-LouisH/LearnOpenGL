@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
 		switch (demoState)
 		{
 			case EXERCISES_EXIT:; break;
-			case EXERCISES_BLANK: blank(); break;
+			case EXERCISES_BLANK: OpenGL_Training::Exercises::blank(); break;
 
 			default: std::cout << "\nNot an option.";
 		}

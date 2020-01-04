@@ -6,17 +6,20 @@
 
 #define FRAME_TIME_ms 17
 
-class ApplicationWindow
+namespace OpenGL_Training
 {
-private:
-	SDL_Window *window;
-	SDL_GLContext context;
-	Timing time;
-	int windowWidth;
-	int windowHeight;
-public:
-	ApplicationWindow(std::string appName);
-	~ApplicationWindow();
-	bool handleEvents();
-	void swapBuffers();
-};
+	class ApplicationWindow
+	{
+	private:
+		SDL_Window* window;
+		SDL_GLContext context;
+		Timing time;
+		int windowWidth;
+		int windowHeight;
+	public:
+		ApplicationWindow(std::string appName);
+		~ApplicationWindow();
+		bool handleEvents();
+		void swapBuffers();
+	};
+}

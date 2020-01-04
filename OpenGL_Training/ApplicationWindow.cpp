@@ -2,7 +2,7 @@
 #include <SDL_events.h>
 #include <GL/glew.h>
 
-ApplicationWindow::ApplicationWindow(std::string appName)
+OpenGL_Training::ApplicationWindow::ApplicationWindow(std::string appName)
 {
 	std::string displayedAppName = "OpenGL Training Exercise: " + appName;
 	this->windowWidth = 800;
@@ -46,14 +46,14 @@ ApplicationWindow::ApplicationWindow(std::string appName)
 	glViewport(0, 0, this->windowWidth, this->windowHeight);
 }
 
-ApplicationWindow::~ApplicationWindow()
+OpenGL_Training::ApplicationWindow::~ApplicationWindow()
 {
 	SDL_GL_DeleteContext(this->context);
 	SDL_DestroyWindow(this->window);
 	SDL_Quit();
 }
 
-bool ApplicationWindow::handleEvents()
+bool OpenGL_Training::ApplicationWindow::handleEvents()
 {
 	SDL_Event SDLEvents;
 	bool isRunning = true;
@@ -91,7 +91,7 @@ bool ApplicationWindow::handleEvents()
 	return isRunning;
 }
 
-void ApplicationWindow::swapBuffers()
+void OpenGL_Training::ApplicationWindow::swapBuffers()
 {
 	time.cycleEnd = SDL_GetTicks();
 	time.cycleDelta = time.cycleEnd - time.cycleStart;

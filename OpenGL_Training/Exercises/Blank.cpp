@@ -1,6 +1,6 @@
 #include "Exercises.hpp"
 
-void blank()
+void OpenGL_Training::Exercises::blank()
 {
 	ApplicationWindow appWindow = ApplicationWindow("Blank");
 

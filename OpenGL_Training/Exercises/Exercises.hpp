@@ -4,4 +4,10 @@
 #include <glm/glm.hpp>
 #include "../ApplicationWindow.hpp"
 
-void blank();
+namespace OpenGL_Training
+{
+	namespace Exercises
+	{
+		void blank();
+	}
+}
