@@ -31,7 +31,7 @@ OpenGL_Training::ApplicationWindow::ApplicationWindow(std::string appName)
 		SDL_WINDOWPOS_CENTERED,
 		windowWidth,
 		windowHeight,
-		SDL_WINDOW_OPENGL);
+		SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
 
 	if (this->window == NULL)
 	{
@@ -84,9 +84,18 @@ bool OpenGL_Training::ApplicationWindow::handleEvents()
 			{
 				;
 			}
+			else if (SDLEvents.key.keysym.sym == SDLK_F1)
+			{
+				SDL_SetWindowSize(this->window, 800, 600);
+				SDL_SetWindowPosition(this->window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
+			}
 			break;
 		}
 	}
+
+	//Register any window dimension changes and resize the glViewport accordingly.
+	SDL_GetWindowSize(this->window, &this->windowWidth, &this->windowHeight);
+	glViewport(0, 0, this->windowWidth, this->windowHeight);
 
 	return isRunning;
 }
