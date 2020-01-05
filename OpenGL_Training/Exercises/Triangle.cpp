@@ -14,6 +14,16 @@ void OpenGL_Training::Exercises::triangle()
 		 0.0f,  0.5f, 0.0f  //top middle point
 	};
 
+	const char vertexShaderSource[] = R"(
+		#version 330 core
+		layout (location = 0) in vec3 aPos;
+
+		void main()
+		{
+			gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
+		}
+	)";
+
 	unsigned int vertexBufferObject;
 	glGenBuffers(1, &vertexBufferObject);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject);
