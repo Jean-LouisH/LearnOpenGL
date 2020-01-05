@@ -15,6 +15,9 @@ void OpenGL_Training::Exercises::triangle()
 	};
 
 	unsigned int vertexBufferObject;
+	unsigned int vertexArrayObject;
+	glGenVertexArrays(1, &vertexArrayObject);
+	glBindVertexArray(vertexArrayObject);
 	glGenBuffers(1, &vertexBufferObject);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(triangleVertices), triangleVertices, GL_STATIC_DRAW);
@@ -88,8 +91,15 @@ void OpenGL_Training::Exercises::triangle()
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
 
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+
+	glClearColor(0.0f, 0.0f, 0.5f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT);
+
 	while (appWindow.handleEvents())
 	{
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 		appWindow.swapBuffers();
 	}
 }
