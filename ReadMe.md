@@ -5,3 +5,4 @@ Follows through the tutorials of [Learn OpenGL](https://learnopengl.com/Introduc
 ## Gallery
 
 ![](Documentation/Images/Blank.png)
+![](Documentation/Images/Triangle.png)
