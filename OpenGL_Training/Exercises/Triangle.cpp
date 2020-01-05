@@ -14,7 +14,7 @@ void OpenGL_Training::Exercises::triangle()
 		 0.0f,  0.5f, 0.0f  //top middle point
 	};
 
-	const char vertexShaderSource[] = R"(
+	const char* vertexShaderSource = R"(
 		#version 330 core
 		layout (location = 0) in vec3 aPos;
 
