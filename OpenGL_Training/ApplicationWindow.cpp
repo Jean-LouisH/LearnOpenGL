@@ -102,12 +102,16 @@ bool OpenGL_Training::ApplicationWindow::handleEvents()
 
 void OpenGL_Training::ApplicationWindow::swapBuffers()
 {
+	SDL_GL_SwapWindow(this->window);
+}
+
+void OpenGL_Training::ApplicationWindow::sleep()
+{
 	time.cycleEnd = SDL_GetTicks();
 	time.cycleDelta = time.cycleEnd - time.cycleStart;
 	time.frameDelay = FRAME_TIME_ms - time.cycleDelta;
 	if (time.frameDelay > 0)
 		SDL_Delay(time.frameDelay);
 	time.frame = SDL_GetTicks() - time.cycleStart;
-	SDL_GL_SwapWindow(this->window);
 	time.cycleStart = SDL_GetTicks();
 }

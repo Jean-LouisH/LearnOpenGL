@@ -10,5 +10,6 @@ void OpenGL_Training::Exercises::blank()
 	while (appWindow.handleEvents())
 	{
 		appWindow.swapBuffers();
+		appWindow.sleep();
 	}
 }

@@ -21,5 +21,6 @@ namespace OpenGL_Training
 		~ApplicationWindow();
 		bool handleEvents();
 		void swapBuffers();
+		void sleep();
 	};
 }
