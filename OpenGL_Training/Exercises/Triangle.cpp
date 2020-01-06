@@ -86,20 +86,22 @@ void OpenGL_Training::Exercises::triangle()
 		std::cout << "ERROR::SHADER::PROGRAM::COMPILATION_FAILED " << programInfoLog << std::endl;
 	}
 
-	glUseProgram(shaderProgram);
-
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
 
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
+	//As a static image, I opted to draw to the front and back buffers only once.
 	glClearColor(0.0f, 0.0f, 0.5f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
+	glUseProgram(shaderProgram);
+	glDrawArrays(GL_TRIANGLES, 0, 3);
+	appWindow.swapBuffers();
+	glDrawArrays(GL_TRIANGLES, 0, 3);
 
 	while (appWindow.handleEvents())
 	{
-		glDrawArrays(GL_TRIANGLES, 0, 3);
-		appWindow.swapBuffers();
+		appWindow.sleep();
 	}
 }
