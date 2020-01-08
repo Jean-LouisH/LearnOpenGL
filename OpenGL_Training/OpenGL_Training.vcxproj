@@ -137,6 +137,7 @@
   <ItemGroup>
     <ClCompile Include="ApplicationWindow.cpp" />
     <ClCompile Include="Exercises\Blank.cpp" />
+    <ClCompile Include="Exercises\Rectangle.cpp" />
     <ClCompile Include="Exercises\Triangle.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

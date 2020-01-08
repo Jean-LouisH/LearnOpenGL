@@ -10,5 +10,6 @@ namespace OpenGL_Training
 	{
 		void blank();
 		void triangle();
+		void rectangle();
 	}
 }
