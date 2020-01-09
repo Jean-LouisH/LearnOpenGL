@@ -100,8 +100,6 @@ void OpenGL_Training::Exercises::rectangle()
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);	
 
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-
 	while (appWindow.handleEvents())
 	{
 		glClearColor(0.0f, 0.0f, 0.5f, 1.0f);

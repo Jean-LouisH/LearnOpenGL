@@ -8,6 +8,8 @@ OpenGL_Training::ApplicationWindow::ApplicationWindow(std::string appName)
 	this->windowWidth = 800;
 	this->windowHeight = 600;
 
+	this->isWireframeModeEnabled = false;
+
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
 	{
 		SDL_Log(
@@ -82,7 +84,16 @@ bool OpenGL_Training::ApplicationWindow::handleEvents()
 		case SDL_KEYUP:
 			if (SDLEvents.key.keysym.sym < 128)
 			{
-				;
+				if (SDLEvents.key.keysym.sym == SDLK_m)
+				{
+					if (this->isWireframeModeEnabled)
+						glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+					else
+						glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
+					this->isWireframeModeEnabled = !this->isWireframeModeEnabled;
+				}
+
 			}
 			else if (SDLEvents.key.keysym.sym == SDLK_F1)
 			{

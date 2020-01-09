@@ -16,6 +16,7 @@ namespace OpenGL_Training
 		Timing time;
 		int windowWidth;
 		int windowHeight;
+		bool isWireframeModeEnabled;
 	public:
 		ApplicationWindow(std::string appName);
 		~ApplicationWindow();
