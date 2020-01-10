@@ -8,7 +8,7 @@
 	#define SHADER_PATH "Shaders/"
 #endif
 
-GLchar* ShaderFileLoader::load(std::string fileName)
+GLchar* OpenGL_Training::ShaderFileLoader::load(std::string fileName)
 {
 	FILE* readFile = fopen((SHADER_PATH + fileName).c_str(), "rb");
 

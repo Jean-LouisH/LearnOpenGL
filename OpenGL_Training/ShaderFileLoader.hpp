@@ -3,8 +3,11 @@
 #include <gl/glew.h>
 #include <string>
 
-namespace ShaderFileLoader
+namespace OpenGL_Training
 {
-	/**File name only, without the file path.*/
-	GLchar* load(std::string fileName);
+	namespace ShaderFileLoader
+	{
+		/**File name only, without the file path.*/
+		GLchar* load(std::string fileName);
+	}
 }
