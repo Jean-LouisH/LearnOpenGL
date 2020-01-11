@@ -3,6 +3,8 @@
 #include <iostream>
 #include <glm/glm.hpp>
 #include "../ApplicationWindow.hpp"
+#include "../ShaderFileLoader.hpp"
+#include <math.h>
 
 namespace OpenGL_Training
 {
@@ -11,5 +13,6 @@ namespace OpenGL_Training
 		void blank();
 		void triangle();
 		void rectangle();
+		void shadeChangingTriangle();
 	}
 }
