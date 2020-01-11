@@ -1,4 +1,6 @@
 #include "Exercises/Exercises.hpp"
+#include <vector>
+#include <string>
 
 int main(int argc, char* argv[])
 {
@@ -14,12 +16,17 @@ int main(int argc, char* argv[])
 
 	do
 	{
+		std::vector<std::string> demos;
+
+		demos.push_back("Exit");
+		demos.push_back("Blank");
+		demos.push_back("Triangle");
+		demos.push_back("Rectangle");
+
 		std::cout << "\n****************************************";
-		std::cout << "\n\t\tOpenGL Training\n\n\tSelect demo";
-		std::cout << "\n\n0. Exit";
-		std::cout << "\n1. Blank";
-		std::cout << "\n2. Triangle";
-		std::cout << "\n3. Rectangle";
+		std::cout << "\n\t\tOpenGL Training\n\n\tSelect demo\n";
+		for (int i = 0; i < demos.size(); i++)
+			std::cout << "\n" << i << ". " << demos.at(i);
 		std::cout << "\n\n\tChoice -> ";
 		std::cin >> demoState;
 
