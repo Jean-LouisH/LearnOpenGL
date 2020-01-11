@@ -86,12 +86,12 @@ bool OpenGL_Training::ApplicationWindow::handleEvents()
 			{
 				if (SDLEvents.key.keysym.sym == SDLK_m)
 				{
+					this->isWireframeModeEnabled = !this->isWireframeModeEnabled;
+
 					if (this->isWireframeModeEnabled)
 						glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 					else
 						glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-
-					this->isWireframeModeEnabled = !this->isWireframeModeEnabled;
 				}
 
 			}
