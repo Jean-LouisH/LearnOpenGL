@@ -12,7 +12,9 @@ void OpenGL_Training::Exercises::multicolouredTriangle()
 		 0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f    // top 
 	};
 
-	Shader shaders = Shader("PositionAndColour_vertex.glsl", "PositionAndColour_fragment.glsl");
+	Shader shaders = Shader(
+		"PositionAndColour_vertex.glsl", 
+		"PositionAndColourWithSineVariableBrightness_fragment.glsl");
 
 	unsigned int vertexArrayObject;
 	unsigned int vertexBufferObject;
