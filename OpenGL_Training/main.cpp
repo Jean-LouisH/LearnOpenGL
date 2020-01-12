@@ -11,6 +11,7 @@ int main(int argc, char* argv[])
 		EXERCISES_TRIANGLE,
 		EXERCISES_RECTANGLE,
 		EXERCISES_SHADE_CHANGING_TRIANGLE,
+		EXERCISES_MULTICOLOURED_TRIANGLE,
 	};
 
 	int demoState = EXERCISES_EXIT;
@@ -24,6 +25,7 @@ int main(int argc, char* argv[])
 		demos.push_back("Triangle");
 		demos.push_back("Rectangle");
 		demos.push_back("Shade Changing Triangle");
+		demos.push_back("Multi-coloured Triangle");
 
 		std::cout << "\n****************************************";
 		std::cout << "\n\t\tOpenGL Training\n\n\tSelect demo\n";
@@ -39,6 +41,7 @@ int main(int argc, char* argv[])
 			case EXERCISES_TRIANGLE: OpenGL_Training::Exercises::triangle(); break;
 			case EXERCISES_RECTANGLE: OpenGL_Training::Exercises::rectangle(); break;
 			case EXERCISES_SHADE_CHANGING_TRIANGLE: OpenGL_Training::Exercises::shadeChangingTriangle(); break;
+			case EXERCISES_MULTICOLOURED_TRIANGLE: OpenGL_Training::Exercises::multicolouredTriangle(); break;
 
 			default: std::cout << "\nNot an option.";
 		}

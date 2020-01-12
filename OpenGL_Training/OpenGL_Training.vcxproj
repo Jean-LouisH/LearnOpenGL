@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="ApplicationWindow.cpp" />
     <ClCompile Include="Exercises\Blank.cpp" />
+    <ClCompile Include="Exercises\MulticolouredTriangle.cpp" />
     <ClCompile Include="Exercises\Rectangle.cpp" />
     <ClCompile Include="Exercises\ShadeChangingTriangle.cpp" />
     <ClCompile Include="Exercises\Triangle.cpp" />

@@ -14,5 +14,6 @@ namespace OpenGL_Training
 		void triangle();
 		void rectangle();
 		void shadeChangingTriangle();
+		void multicolouredTriangle();
 	}
 }
