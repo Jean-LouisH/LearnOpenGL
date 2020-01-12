@@ -5,10 +5,6 @@ Follows through the tutorials of [Learn OpenGL](https://learnopengl.com/Introduc
 ## Gallery
 
 ![](Images/Blank.png)
-Blank
 ![](Images/Triangle.png)
-Triangle
 ![](Images/Rectangle.png)
-Rectangle
 ![](Images/Shade_Changing_Triangle.gif)
-Shade Changing Triangle
