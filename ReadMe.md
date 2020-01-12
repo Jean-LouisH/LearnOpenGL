@@ -7,3 +7,4 @@ Follows through the tutorials of [Learn OpenGL](https://learnopengl.com/Introduc
 ![](Images/Blank.png)
 ![](Images/Triangle.png)
 ![](Images/Rectangle.png)
+![](Images/Shade Changing Triangle.gif)
