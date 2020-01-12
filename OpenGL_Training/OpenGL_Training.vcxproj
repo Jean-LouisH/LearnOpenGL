@@ -146,11 +146,13 @@
     <ClCompile Include="Exercises\ShadeChangingTriangle.cpp" />
     <ClCompile Include="Exercises\Triangle.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderFileLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ApplicationWindow.hpp" />
     <ClInclude Include="Exercises\Exercises.hpp" />
+    <ClInclude Include="Shader.hpp" />
     <ClInclude Include="ShaderFileLoader.hpp" />
     <ClInclude Include="Timing.hpp" />
   </ItemGroup>
