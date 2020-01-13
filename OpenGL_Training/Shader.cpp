@@ -20,6 +20,7 @@ OpenGL_Training::Shader::Shader(const char* vertexShaderPath, const char* fragme
 	{
 		glGetShaderInfoLog(vertexShader, 512, NULL, vertexShaderInfoLog);
 		std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED " << vertexShaderInfoLog << std::endl;
+		glDeleteShader(vertexShader);
 	}
 
 	unsigned int fragmentShader;
@@ -34,6 +35,8 @@ OpenGL_Training::Shader::Shader(const char* vertexShaderPath, const char* fragme
 	{
 		glGetShaderInfoLog(fragmentShader, 512, NULL, fragmentShaderInfoLog);
 		std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED " << fragmentShaderInfoLog << std::endl;
+		glDeleteShader(vertexShader);
+		glDeleteShader(fragmentShader);
 	}
 
 	this->programID = glCreateProgram();
@@ -49,9 +52,14 @@ OpenGL_Training::Shader::Shader(const char* vertexShaderPath, const char* fragme
 	{
 		glGetProgramInfoLog(this->programID, 512, NULL, programInfoLog);
 		std::cout << "ERROR::SHADER::PROGRAM::COMPILATION_FAILED " << programInfoLog << std::endl;
+		glDeleteProgram(this->programID);
+		glDeleteShader(vertexShader);
+		glDeleteShader(fragmentShader);
 	}
 
+	glDetachShader(this->programID, vertexShader);
 	glDeleteShader(vertexShader);
+	glDetachShader(this->programID, fragmentShader);
 	glDeleteShader(fragmentShader);
 }
 
