@@ -1,5 +1,6 @@
 #include "ApplicationWindow.hpp"
 #include <SDL_events.h>
+#include <SDL_image.h>
 #include <GL/glew.h>
 
 OpenGL_Training::ApplicationWindow::ApplicationWindow(std::string appName)
@@ -16,6 +17,8 @@ OpenGL_Training::ApplicationWindow::ApplicationWindow(std::string appName)
 			"SDL could not initialize because: %s",
 			SDL_GetError());
 	}
+
+	IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
 
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
@@ -41,6 +44,10 @@ OpenGL_Training::ApplicationWindow::ApplicationWindow(std::string appName)
 			"SDL could not create the window because: %s",
 			SDL_GetError());
 	}
+
+	SDL_Surface* logo = IMG_Load("../Textures/OpenGL_Logo.png");
+	SDL_SetWindowIcon(this->window, logo);
+	SDL_FreeSurface(logo);
 
 	this->context = SDL_GL_CreateContext(window);
 	SDL_GL_SetSwapInterval(0);
