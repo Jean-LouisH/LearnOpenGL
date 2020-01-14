@@ -1,5 +1,6 @@
 #include <GL/glew.h>
 #include <SDL.h>
+#include <SDL_image.h>
 #include <iostream>
 #include <glm/glm.hpp>
 #include "../ApplicationWindow.hpp"
