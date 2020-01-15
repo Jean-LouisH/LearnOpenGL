@@ -1,8 +1,8 @@
 #include "Exercises.hpp"
 
-void OpenGL_Training::Exercises::texturedTriangle()
+void OpenGL_Training::Exercises::texturedRectangle()
 {
-	ApplicationWindow appWindow = ApplicationWindow("Textured Triangle");
+	ApplicationWindow appWindow = ApplicationWindow("Textured Rectangle");
 
 	float rectangleVertices[] = {
 		// positions          // colors           // texture coords

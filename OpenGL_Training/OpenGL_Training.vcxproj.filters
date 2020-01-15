@@ -42,7 +42,7 @@
     <ClCompile Include="Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Exercises\TexturedTriangle.cpp">
+    <ClCompile Include="Exercises\TexturedRectangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
