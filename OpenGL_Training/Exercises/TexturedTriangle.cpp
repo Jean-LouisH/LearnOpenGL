@@ -4,7 +4,7 @@ void OpenGL_Training::Exercises::texturedTriangle()
 {
 	ApplicationWindow appWindow = ApplicationWindow("Textured Triangle");
 
-	float triangleVertices[] = {
+	float rectangleVertices[] = {
 		// positions          // colors           // texture coords
 		 0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // top right
 		 0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // bottom right
@@ -42,6 +42,12 @@ void OpenGL_Training::Exercises::texturedTriangle()
 	SDL_FreeSurface(surface);
 
 
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+	glEnableVertexAttribArray(2);
 
 	while (appWindow.handleEvents())
 	{
