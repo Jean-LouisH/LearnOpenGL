@@ -5,6 +5,7 @@
 #include <glm/glm.hpp>
 #include "../ApplicationWindow.hpp"
 #include "../ShaderFileLoader.hpp"
+#include "../Shader.hpp"
 #include <math.h>
 
 namespace OpenGL_Training
