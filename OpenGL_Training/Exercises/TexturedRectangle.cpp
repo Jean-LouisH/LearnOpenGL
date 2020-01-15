@@ -12,6 +12,11 @@ void OpenGL_Training::Exercises::texturedRectangle()
 		-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // top left 
 	};
 
+	unsigned int rectangleIndices[] = {  // note that we start from 0!
+		0, 1, 3,   // first triangle
+		1, 2, 3    // second triangle
+	};
+
 	unsigned int texture;
 	glGenTextures(1, &texture);
 	glBindTexture(GL_TEXTURE_2D, texture);
@@ -35,6 +40,22 @@ void OpenGL_Training::Exercises::texturedRectangle()
 
 	SDL_FreeSurface(surface);
 
+	Shader shaders = Shader("Texture_vertex.glsl", "Texture_fragment.glsl");
+
+	unsigned int vertexArrayObject;
+	unsigned int vertexBufferObject;
+	unsigned int elementBufferObject;
+
+	glGenVertexArrays(1, &vertexArrayObject);
+	glGenBuffers(1, &vertexBufferObject);
+	glGenBuffers(1, &elementBufferObject);
+
+	glBindVertexArray(vertexArrayObject);
+	glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(rectangleVertices), rectangleVertices, GL_STATIC_DRAW);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementBufferObject);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(rectangleIndices), rectangleIndices, GL_STATIC_DRAW);
+
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
@@ -42,10 +63,16 @@ void OpenGL_Training::Exercises::texturedRectangle()
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
 	glEnableVertexAttribArray(2);
 
+	shaders.use();
+	glBindTexture(GL_TEXTURE_2D, texture);
+	glBindVertexArray(vertexArrayObject);
+	shaders.getUniforms();
+
 	while (appWindow.handleEvents())
 	{
 		glClearColor(0.125f, 0.125f, 0.125f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		appWindow.swapBuffers();
 		appWindow.sleep();
 	}
