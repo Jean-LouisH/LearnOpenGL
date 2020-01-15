@@ -5,10 +5,11 @@ void OpenGL_Training::Exercises::texturedTriangle()
 	ApplicationWindow appWindow = ApplicationWindow("Textured Triangle");
 
 	float triangleVertices[] = {
-		//x      y     z
-		-0.5f, -0.5f, 0.0f, //lower left point
-		 0.5f, -0.5f, 0.0f, //lower right point
-		 0.0f,  0.5f, 0.0f  //top middle point
+		// positions          // colors           // texture coords
+		 0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // top right
+		 0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // bottom right
+		-0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // bottom left
+		-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // top left 
 	};
 
 	float texCoords[] = {
@@ -39,6 +40,8 @@ void OpenGL_Training::Exercises::texturedTriangle()
 	}
 
 	SDL_FreeSurface(surface);
+
+
 
 	while (appWindow.handleEvents())
 	{
