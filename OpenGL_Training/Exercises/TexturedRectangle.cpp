@@ -12,12 +12,6 @@ void OpenGL_Training::Exercises::texturedRectangle()
 		-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // top left 
 	};
 
-	float texCoords[] = {
-		0.0f, 0.0f,  // lower-left corner  
-		1.0f, 0.0f,  // lower-right corner
-		0.5f, 1.0f   // top-center corner
-	};
-
 	unsigned int texture;
 	glGenTextures(1, &texture);
 	glBindTexture(GL_TEXTURE_2D, texture);
@@ -40,7 +34,6 @@ void OpenGL_Training::Exercises::texturedRectangle()
 	}
 
 	SDL_FreeSurface(surface);
-
 
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
