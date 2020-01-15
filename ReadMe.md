@@ -9,3 +9,4 @@ Follows through the tutorials of [Learn OpenGL](https://learnopengl.com/Introduc
 ![](Images/Rectangle.png)
 ![](Images/Shade_Changing_Triangle.gif)
 ![](Images/Multicoloured_Triangle.png)
+![](Images/Textured_Rectangle.png)
