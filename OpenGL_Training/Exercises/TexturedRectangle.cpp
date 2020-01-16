@@ -40,7 +40,7 @@ void OpenGL_Training::Exercises::texturedRectangle()
 
 	SDL_FreeSurface(surface);
 
-	Shader shaders = Shader("Texture_vertex.glsl", "Texture_fragment.glsl");
+	Shader shaders = Shader("Texture_vertex.glsl", "ColourizedTexture_fragment.glsl");
 
 	unsigned int vertexArrayObject;
 	unsigned int vertexBufferObject;
@@ -64,6 +64,7 @@ void OpenGL_Training::Exercises::texturedRectangle()
 	glEnableVertexAttribArray(2);
 
 	shaders.use();
+	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture);
 	glBindVertexArray(vertexArrayObject);
 	shaders.getUniforms();
