@@ -11,3 +11,4 @@ Follows through the tutorials of [Learn OpenGL](https://learnopengl.com/Introduc
 ![](Images/Multicoloured_Triangle.png)
 ![](Images/Textured_Rectangle.png)
 ![](Images/Colourized_Textured_Rectangle.png)
+![](Images/Mixed_Texture_Rectangle.png)
