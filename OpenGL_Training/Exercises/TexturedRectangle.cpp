@@ -17,9 +17,9 @@ void OpenGL_Training::Exercises::texturedRectangle()
 		1, 2, 3    // second triangle
 	};
 
-	unsigned int texture;
-	glGenTextures(1, &texture);
-	glBindTexture(GL_TEXTURE_2D, texture);
+	unsigned int texture1;
+	glGenTextures(1, &texture1);
+	glBindTexture(GL_TEXTURE_2D, texture1);
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
@@ -35,12 +35,35 @@ void OpenGL_Training::Exercises::texturedRectangle()
 	}
 	else
 	{
-		std::cout << "Failed to load texture" << std::endl;
+		std::cout << "Failed to load texture" << "container.jpg" <<  std::endl;
 	}
 
 	SDL_FreeSurface(surface);
 
-	Shader shaders = Shader("Texture_vertex.glsl", "ColourizedTexture_fragment.glsl");
+	unsigned int texture2;
+	glGenTextures(1, &texture2);
+	glBindTexture(GL_TEXTURE_2D, texture2);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+	surface = IMG_Load("../Textures/awesomeface.png");
+
+	if (surface->pixels != NULL)
+	{
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, surface->w, surface->h, 0, GL_RGBA, GL_UNSIGNED_BYTE, surface->pixels);
+		glGenerateMipmap(GL_TEXTURE_2D);
+	}
+	else
+	{
+		std::cout << "Failed to load texture" << "awesomeface.png" << std::endl;
+	}
+
+	SDL_FreeSurface(surface);
+
+	Shader shaders = Shader("Texture_vertex.glsl", "MixedTexture_fragment.glsl");
 
 	unsigned int vertexArrayObject;
 	unsigned int vertexBufferObject;
@@ -65,8 +88,12 @@ void OpenGL_Training::Exercises::texturedRectangle()
 
 	shaders.use();
 	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, texture);
+	glBindTexture(GL_TEXTURE_2D, texture1);
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, texture2);
 	glBindVertexArray(vertexArrayObject);
+	shaders.setInt("texture1", 0);
+	shaders.setInt("texture2", 1);
 	shaders.getUniforms();
 
 	while (appWindow.handleEvents())
