@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 
+using namespace OpenGL_Training::Exercises;
+
 int main(int argc, char* argv[])
 {
 	enum Exercises
@@ -39,12 +41,12 @@ int main(int argc, char* argv[])
 		switch (demoState)
 		{
 			case EXERCISES_EXIT:; break;
-			case EXERCISES_BLANK: OpenGL_Training::Exercises::blank(); break;
-			case EXERCISES_TRIANGLE: OpenGL_Training::Exercises::triangle(); break;
-			case EXERCISES_RECTANGLE: OpenGL_Training::Exercises::rectangle(); break;
-			case EXERCISES_SHADE_CHANGING_TRIANGLE: OpenGL_Training::Exercises::shadeChangingTriangle(); break;
-			case EXERCISES_MULTICOLOURED_TRIANGLE: OpenGL_Training::Exercises::multicolouredTriangle(); break;
-			case EXERCISES_TEXTURED_RECTANGLE: OpenGL_Training::Exercises::texturedRectangle(); break;
+			case EXERCISES_BLANK: blank(); break;
+			case EXERCISES_TRIANGLE: triangle(); break;
+			case EXERCISES_RECTANGLE: rectangle(); break;
+			case EXERCISES_SHADE_CHANGING_TRIANGLE: shadeChangingTriangle(); break;
+			case EXERCISES_MULTICOLOURED_TRIANGLE: multicolouredTriangle(); break;
+			case EXERCISES_TEXTURED_RECTANGLE: texturedRectangle(); break;
 
 			default: std::cout << "\nNot an option.";
 		}
