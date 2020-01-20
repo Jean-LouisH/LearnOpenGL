@@ -59,6 +59,7 @@ OpenGL_Training::ApplicationWindow::~ApplicationWindow()
 {
 	SDL_GL_DeleteContext(this->context);
 	SDL_DestroyWindow(this->window);
+	IMG_Quit();
 	SDL_Quit();
 }
 
