@@ -1,6 +1,7 @@
 #include "ApplicationWindow.hpp"
 #include <SDL_events.h>
 #include <SDL_image.h>
+#include <SDL_ttf.h>
 #include <GL/glew.h>
 
 OpenGL_Training::ApplicationWindow::ApplicationWindow(std::string appName)
@@ -19,6 +20,7 @@ OpenGL_Training::ApplicationWindow::ApplicationWindow(std::string appName)
 	}
 
 	IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
+	TTF_Init();
 
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
@@ -60,6 +62,7 @@ OpenGL_Training::ApplicationWindow::~ApplicationWindow()
 	SDL_GL_DeleteContext(this->context);
 	SDL_DestroyWindow(this->window);
 	IMG_Quit();
+	TTF_Quit();
 	SDL_Quit();
 }
 
