@@ -145,6 +145,7 @@
     <ClCompile Include="Exercises\Rectangle.cpp" />
     <ClCompile Include="Exercises\ShadeChangingTriangle.cpp" />
     <ClCompile Include="Exercises\TexturedRectangle.cpp" />
+    <ClCompile Include="Exercises\TransformedTexturedRectangle.cpp" />
     <ClCompile Include="Exercises\Triangle.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Shader.cpp" />
