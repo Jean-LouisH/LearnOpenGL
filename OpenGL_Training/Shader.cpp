@@ -2,6 +2,8 @@
 #include <GL/glew.h>
 #include <iostream>
 #include "ShaderFileLoader.hpp"
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 OpenGL_Training::Shader::Shader(const char* vertexShaderPath, const char* fragmentShaderPath)
 {
@@ -113,4 +115,9 @@ void OpenGL_Training::Shader::setInt(const char* name, int value)
 void OpenGL_Training::Shader::setFloat(const char* name, float value)
 {
 	glUniform1f(glGetUniformLocation(this->programID, name), value);
+}
+
+void OpenGL_Training::Shader::setMat4(const char* name, glm::mat4 transform)
+{
+	glUniformMatrix4fv(glGetUniformLocation(this->programID, name), 1, GL_FALSE, glm::value_ptr(transform));
 }
