@@ -90,6 +90,11 @@ void OpenGL_Training::Shader::getUniforms()
 	}
 }
 
+unsigned int OpenGL_Training::Shader::getID()
+{
+	return this->programID;
+}
+
 void OpenGL_Training::Shader::use()
 {
 	glUseProgram(this->programID);
